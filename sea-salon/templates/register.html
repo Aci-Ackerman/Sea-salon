@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 col-lg-4">
+                <form class="register-form" method="POST" action="{{ url_for('regist') }}">
+                    <h2 class="text-center mb-4">Register</h2>
+                    <div class="form-group">
+                        <label for="nik">User ID:</label>
+                        <input type="text" id="nik" name="nik" class="form-control"value="{{ nik }}"readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Full Name:</label>
+                        <input type="text" id="nama" name="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <label>Role: </label>
+                    <select name="role" class="form-control" required>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
